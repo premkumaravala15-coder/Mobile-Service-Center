@@ -1,0 +1,29 @@
+
+{
+  "serviceRequests": [
+    {
+      "id": 1,
+      "customerName": "Prem kumar",
+      "mobileModel": "Samsung Galaxy A54",
+      "issue": "Display damaged",
+      "status": "In Progress",
+      "cost": 2500
+    },
+    {
+      "id": 2,
+      "customerName": "Rahul",
+      "mobileModel": "iPhone 13",
+      "issue": "Battery problem",
+      "status": "Completed",
+      "cost": 1800
+    },
+    {
+      "id": 3,
+      "customerName": "Priya",
+      "mobileModel": "Redmi Note 12",
+      "issue": "Charging problem",
+      "status": "Pending",
+      "cost": 800
+    }
+  ]
+}
