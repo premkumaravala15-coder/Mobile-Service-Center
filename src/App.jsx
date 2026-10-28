@@ -1,29 +1,41 @@
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [requests, setRequests] = useState([]);
-  const [search, setSearch] = useState("");
+  const [requests] = useState([
+    {
+      id: 1,
+      customerName: "Prem kumar",
+      mobileModel: "Samsung Galaxy A54",
+      issue: "Display damaged",
+      status: "In Progress",
+      cost: 2500,
+    },
+    {
+      id: 2,
+      customerName: "Rahul",
+      mobileModel: "iPhone 13",
+      issue: "Battery problem",
+      status: "Completed",
+      cost: 1800,
+    },
+    {
+      id: 3,
+      customerName: "Priya",
+      mobileModel: "Redmi Note 12",
+      issue: "Charging problem",
+      status: "Pending",
+      cost: 800,
+    },
+  ]);
 
-  // Fetch service requests from JSON Server
-  useEffect(() => {
-    fetch("http://localhost:3001/serviceRequests")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch service requests");
-        }
-        return response.json();
-      })
-      .then((data) => setRequests(data))
-      .catch((error) => console.error("Error:", error));
-  }, []);
+  const [search, setSearch] = useState("");
 
   // Count requests by status
   const count = (status) =>
     requests.filter((item) => item.status === status).length;
 
-  // Search customers, models, issues, and status
+  // Search service requests
   const filteredRequests = requests.filter((item) =>
     `${item.customerName} ${item.mobileModel} ${item.issue} ${item.status}`
       .toLowerCase()
